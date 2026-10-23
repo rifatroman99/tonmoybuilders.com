@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tonmoy Builders | Modern Real Estate & Development</title>
+    <title>M/S. Tonmoy Builders | Architectural Design, RAJUK Plan Pass & Real Estate Development</title>
+    <meta name="description" content="M/S. Tonmoy Builders - Premier Architectural Design, Structural Engineering, RAJUK & GCC Plan Approval, Resort Design, and Building Construction Company in Board Bazar, Gazipur.">
     
-    <!-- Google Fonts: Outfit -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Outfit & Hind Siliguri (For Bengali) -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome Icons -->
@@ -16,102 +17,235 @@
 
     <style>
         :root {
-            --primary-dark: #0f172a;
+            --primary-dark: #0b1120;
+            --secondary-dark: #1e293b;
             --accent: #f59e0b;
+            --accent-hover: #d97706;
+            --accent-light: rgba(245, 158, 11, 0.12);
             --light-bg: #f8fafc;
+            --text-dark: #0f172a;
             --text-muted: #64748b;
+            --white: #ffffff;
+            --card-radius: 20px;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Outfit', 'Hind Siliguri', sans-serif;
             background-color: var(--light-bg);
-            color: var(--primary-dark);
+            color: var(--text-dark);
             overflow-x: hidden;
         }
 
-        /* Glassmorphism Navbar */
+        /* ================= TOP BAR ================= */
+        .top-bar {
+            background: #060a12;
+            color: #cbd5e1;
+            font-size: 0.88rem;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .top-bar a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .top-bar a:hover {
+            color: var(--accent);
+        }
+        .top-bar i {
+            color: var(--accent);
+            margin-right: 6px;
+        }
+
+        /* ================= GLASS NAVBAR ================= */
         .glass-nav {
-            background: rgba(15, 23, 42, 0.85) !important;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(11, 17, 32, 0.92) !important;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             transition: all 0.3s ease;
-            padding: 15px 0;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
         .navbar-brand img {
-            height: 45px;
-            border-radius: 8px;
+            height: 48px;
+            width: 48px;
+            object-fit: cover;
+            border-radius: 10px;
             margin-right: 12px;
+            border: 2px solid var(--accent);
+        }
+        .brand-subtitle {
+            font-size: 0.72rem;
+            color: var(--accent);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: block;
+            line-height: 1;
         }
         .nav-link {
-            color: #fff !important;
-            font-weight: 400;
-            margin: 0 10px;
+            color: #f1f5f9 !important;
+            font-weight: 500;
+            margin: 0 8px;
             position: relative;
             transition: 0.3s;
+            font-size: 0.98rem;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
         }
         .nav-link:hover {
             color: var(--accent) !important;
         }
+        .nav-link:hover::after {
+            width: 80%;
+        }
 
-        /* Modern Hero Section */
+        .lang-switch-btn {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 50px;
+            padding: 6px 16px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .lang-switch-btn:hover {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
+
+        /* ================= HERO SECTION ================= */
         .hero {
-            height: 100vh;
-            background: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.6)), 
-                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070') center/cover fixed;
+            min-height: 92vh;
+            background: linear-gradient(120deg, rgba(11, 17, 32, 0.95) 0%, rgba(11, 17, 32, 0.8) 55%, rgba(15, 23, 42, 0.65) 100%), 
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070') center/cover no-repeat fixed;
             display: flex;
             align-items: center;
             color: white;
             position: relative;
+            padding: 110px 0 80px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(245, 158, 11, 0.18);
+            border: 1px solid rgba(245, 158, 11, 0.45);
+            color: #fbbf24;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 22px;
         }
         .hero-title {
-            font-size: 4.5rem;
+            font-size: clamp(2.5rem, 5vw, 4.3rem);
             font-weight: 800;
-            line-height: 1.1;
+            line-height: 1.15;
             margin-bottom: 20px;
         }
         .hero-title span {
             color: var(--accent);
         }
+        .hero-desc {
+            font-size: 1.15rem;
+            color: #cbd5e1;
+            max-width: 650px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
 
-        /* Custom Buttons */
+        /* Hero Stats Box */
+        .hero-stats {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 28px;
+            margin-top: 50px;
+        }
+        .stat-item h3 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+        .stat-item p {
+            margin: 0;
+            font-size: 0.92rem;
+            color: #e2e8f0;
+        }
+
+        /* ================= BUTTONS ================= */
         .btn-custom {
             background: var(--accent);
-            color: #fff;
-            padding: 12px 30px;
+            color: #0b1120;
+            padding: 13px 32px;
             border-radius: 50px;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s ease;
             border: none;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
         .btn-custom:hover {
-            background: #d97706;
-            color: #fff;
+            background: #fbbf24;
+            color: #0b1120;
             transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(245, 158, 11, 0.5);
         }
         .btn-outline-custom {
-            border: 2px solid #fff;
+            border: 2px solid rgba(255,255,255,0.75);
             color: #fff;
             padding: 12px 30px;
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
         .btn-outline-custom:hover {
             background: #fff;
             color: var(--primary-dark);
+            border-color: #fff;
             transform: translateY(-3px);
         }
 
-        /* Section Titles */
-        .section-padding { padding: 100px 0; }
+        /* ================= SECTION HEADINGS ================= */
+        .section-padding { padding: 95px 0; }
+        .sub-heading {
+            color: var(--accent-hover);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 8px;
+        }
         .section-title {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 3.5vw, 2.7rem);
             font-weight: 800;
             margin-bottom: 1rem;
             position: relative;
             display: inline-block;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
         }
         .section-title::after {
             content: '';
@@ -119,100 +253,327 @@
             left: 50%;
             bottom: 0;
             transform: translateX(-50%);
-            width: 60px;
+            width: 70px;
             height: 4px;
             background: var(--accent);
             border-radius: 2px;
         }
 
-        /* Feature & Project Cards */
+        /* ================= CARDS & SERVICES ================= */
         .info-card {
-            background: #fff;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            background: var(--white);
+            padding: 38px 30px;
+            border-radius: var(--card-radius);
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
             height: 100%;
+            transition: all 0.35s ease;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+        .info-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.09);
+            border-color: rgba(245, 158, 11, 0.4);
+        }
+        .icon-box {
+            width: 64px;
+            height: 64px;
+            background: var(--accent-light);
+            color: var(--accent-hover);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 22px;
             transition: 0.3s;
         }
-        .info-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
-        .icon-box {
-            width: 60px; height: 60px;
-            background: rgba(245, 158, 11, 0.1);
-            color: var(--accent);
-            border-radius: 15px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 24px; margin-bottom: 20px;
+        .info-card:hover .icon-box {
+            background: var(--accent);
+            color: var(--primary-dark);
         }
-        
-        .project-card {
+
+        /* Sister Concerns Banner */
+        .partner-strip {
+            background: linear-gradient(135deg, #0b1120 0%, #1e293b 100%);
+            color: white;
             border-radius: 20px;
+            padding: 35px 40px;
+            margin-top: 40px;
+            border-left: 5px solid var(--accent);
+        }
+        .partner-badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 12px 22px;
+            border-radius: 12px;
+            font-weight: 600;
+            color: #f8fafc;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ================= PROJECTS PORTFOLIO ================= */
+        .filter-btn {
+            background: #fff;
+            color: var(--text-dark);
+            border: 1px solid #cbd5e1;
+            padding: 9px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            transition: 0.3s;
+            margin: 4px;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-dark);
+            color: var(--accent);
+            border-color: var(--primary-dark);
+        }
+
+        .project-card {
+            border-radius: var(--card-radius);
             overflow: hidden;
-            border: none;
+            border: 1px solid rgba(226, 232, 240, 0.9);
             background: #fff;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.35s ease;
+            height: 100%;
+        }
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.1);
         }
         .project-img-wrapper {
             overflow: hidden;
             position: relative;
+            height: 260px;
         }
         .project-img-wrapper img {
-            width: 100%; height: 300px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
-        .project-card:hover img { transform: scale(1.1); }
-        .project-info { padding: 25px; }
-
-        /* Social/Media Widget */
-        .media-widget {
-            background: #fff;
-            border-radius: 20px;
-            padding: 50px;
-            border: 1px dashed #cbd5e1;
-            text-align: center;
+        .project-card:hover .project-img-wrapper img {
+            transform: scale(1.08);
+        }
+        .project-tag {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: rgba(11, 17, 32, 0.85);
+            backdrop-filter: blur(6px);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .project-info {
+            padding: 26px;
+        }
+        .project-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px dashed #e2e8f0;
+        }
+        .project-meta span i {
+            color: var(--accent-hover);
+            margin-right: 5px;
         }
 
-        /* Contact Details */
+        /* ================= FACEBOOK & MEDIA CENTER ================= */
+        .fb-showcase-card {
+            background: #fff;
+            border-radius: 22px;
+            padding: 35px;
+            box-shadow: 0 12px 35px rgba(15, 23, 42, 0.06);
+            border: 1px solid #e2e8f0;
+            height: 100%;
+        }
+        .fb-iframe-container {
+            background: #f1f5f9;
+            border-radius: 16px;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* ================= CONTACT SECTION ================= */
         .contact-item {
-            display: flex; align-items: center; margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 24px;
         }
         .contact-icon {
-            width: 50px; height: 50px;
-            background: var(--primary-dark); color: #fff;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 20px; margin-right: 20px;
+            width: 52px;
+            height: 52px;
+            min-width: 52px;
+            background: var(--primary-dark);
+            color: var(--accent);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-right: 18px;
+        }
+        .form-control, .form-select {
+            border-radius: 12px;
+            border: 1px solid #cbd5e1;
+            padding: 12px 16px;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15);
         }
 
+        /* ================= FLOATING WHATSAPP BUTTON ================= */
+        .floating-wa {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+            z-index: 9999;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .floating-wa:hover {
+            background: #1ebe5d;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* ================= FOOTER ================= */
         footer {
             background: var(--primary-dark);
-            color: #fff;
-            padding: 30px 0;
-            text-align: center;
+            color: #cbd5e1;
+            padding: 70px 0 30px;
             border-top: 4px solid var(--accent);
         }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        .social-circle {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .social-circle:hover {
+            background: var(--accent);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Language visibility helper */
+        body.lang-bn .en-text { display: none !important; }
+        body.lang-en .bn-text { display: none !important; }
     </style>
 </head>
-<body>
+<body class="lang-bn">
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="top-bar d-none d-lg-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex gap-4">
+                <span><i class="fa-solid fa-location-dot"></i> 
+                    <span class="bn-text">বোর্ডবাজার, জালাল শপিং কমপ্লেক্সের উত্তর পাশে (২য় তলা), গাজীপুর-১৭০৪</span>
+                    <span class="en-text">Beside Jalal Shopping Complex (2nd Floor), Board Bazar, Gazipur-1704</span>
+                </span>
+                <a href="mailto:info@tonmoybuilders.com"><i class="fa-solid fa-envelope"></i> info@tonmoybuilders.com</a>
+            </div>
+            <div class="d-flex align-items-center gap-4">
+                <a href="tel:01610578868" class="fw-bold text-warning"><i class="fa-solid fa-phone-volume"></i> 01610-578868</a>
+                <a href="https://www.facebook.com/tonmoybuilders.ms" target="_blank"><i class="fa-brands fa-facebook"></i> fb.com/tonmoybuilders.ms</a>
+            </div>
+        </div>
+    </div>
 
     <!-- ================= NAVBAR ================= -->
-    <nav class="navbar navbar-expand-lg fixed-top glass-nav">
+    <nav class="navbar navbar-expand-lg sticky-top glass-nav">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center text-white font-weight-bold" href="#home">
-                <img src="https://i.postimg.cc/13nhZhkc/8h-Ojj.jpg" alt="Tonmoy Builders">
-                <span class="fs-4 fw-bold">Tonmoy Builders</span>
+            <a class="navbar-brand d-flex align-items-center text-white" href="#home">
+                <img src="https://i.postimg.cc/13nhZhkc/8h-Ojj.jpg" alt="M/S. Tonmoy Builders Logo">
+                <div>
+                    <span class="fs-4 fw-bold d-block lh-1">Tonmoy Builders</span>
+                    <span class="brand-subtitle mt-1">M/S. Tonmoy Builder's</span>
+                </div>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="fa-solid fa-bars text-white"></i>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fa-solid fa-bars text-white fs-3"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#media">Media Center</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home"><span class="bn-text">হোম</span><span class="en-text">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about"><span class="bn-text">আমাদের সম্পর্কে</span><span class="en-text">About Us</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services"><span class="bn-text">সেবাসমূহ</span><span class="en-text">Services</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects"><span class="bn-text">প্রজেক্টসমূহ</span><span class="en-text">Projects</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#media"><span class="bn-text">মিডিয়া ও ফেসবুক</span><span class="en-text">Media Center</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact"><span class="bn-text">যোগাযোগ</span><span class="en-text">Contact</span></a>
+                    </li>
                 </ul>
+                <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+                    <button class="lang-switch-btn" onclick="toggleLanguage()" id="langBtn">
+                        <i class="fa-solid fa-language me-1"></i> English
+                    </button>
+                    <a href="https://wa.me/8801610578868" target="_blank" class="btn-custom py-2 px-3 text-decoration-none" style="font-size: 0.9rem;">
+                        <i class="fa-brands fa-whatsapp fs-5"></i> 
+                        <span class="bn-text">ফ্রি পরামর্শ</span>
+                        <span class="en-text">Consult Now</span>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -220,86 +581,145 @@
     <!-- ================= HERO SECTION ================= -->
     <section id="home" class="hero">
         <div class="container" data-aos="fade-up" data-aos-duration="1000">
-            <div class="row">
-                <div class="col-lg-8">
-                    <h1 class="hero-title">Building The Future,<br><span>Restoring The Past.</span></h1>
-                    <p class="lead text-light mb-5 fs-4" style="opacity: 0.9;">Excellence and Trust in Every Structure We Build.</p>
-                    <div class="d-flex gap-3">
-                        <a href="#projects" class="btn-custom text-decoration-none">View Projects</a>
-                        <a href="#contact" class="btn-outline-custom text-decoration-none">Contact Us</a>
+            <div class="row align-items-center">
+                <div class="col-lg-9">
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                        <span class="bn-text">স্বপ্নের নকশায়, বিশ্বস্ততার সাথে — রাজউক ও সিটি কর্পোরেশন প্ল্যান পাস ও কনস্ট্রাকশন</span>
+                        <span class="en-text">Building The Future, Restoring The Past — Design, Approval & Construction</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="bn-text">আপনার স্বপ্নের বাড়ি হবে <br><span>দুশ্চিন্তামুক্ত ও নিখুঁত!</span></span>
+                        <span class="en-text">Building The Future,<br><span>Restoring The Past.</span></span>
+                    </h1>
+                    <p class="hero-desc">
+                        <span class="bn-text">বাহ্যিক সৌন্দর্যের পাশাপাশি একটি ভবনের প্রকৃত মূল্য নির্ভর করে তার সঠিক নকশা, ফাউন্ডেশন ও স্ট্রাকচারাল নিরাপত্তার ওপর। রাজউক (RAJUK) ও গাজীপুর সিটি কর্পোরেশন প্ল্যান পাস থেকে শুরু করে পূর্ণাঙ্গ ভবন নির্মাণে তন্ময় বিল্ডার্স আপনার বিশ্বস্ত সঙ্গী।</span>
+                        <span class="en-text">Excellence and trust in every structure we build. From RAJUK & City Corporation plan approvals and 3D architectural design to turnkey commercial and residential construction across Gazipur and Bangladesh.</span>
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#projects" class="btn-custom text-decoration-none">
+                            <i class="fa-solid fa-building-circle-check"></i>
+                            <span class="bn-text">আমাদের প্রজেক্ট দেখুন</span>
+                            <span class="en-text">Explore Projects</span>
+                        </a>
+                        <a href="tel:01610578868" class="btn-outline-custom text-decoration-none">
+                            <i class="fa-solid fa-phone"></i>
+                            <span class="bn-text">কল করুন: ০১৬১০-৫৭৮৮৬৮</span>
+                            <span class="en-text">Call: 01610-578868</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Highlight -->
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
+                <div class="row text-center g-4">
+                    <div class="col-6 col-md-3 stat-item">
+                        <h3>100%</h3>
+                        <p><span class="bn-text">স্ট্রাকচারাল ও বিএনবিসি সেফটি</span><span class="en-text">BNBC Structural Safety</span></p>
+                    </div>
+                    <div class="col-6 col-md-3 stat-item">
+                        <h3>RAJUK & GCC</h3>
+                        <p><span class="bn-text">দ্রুত প্ল্যান পাস ও অনুমোদন</span><span class="en-text">Plan Pass & Approval</span></p>
+                    </div>
+                    <div class="col-6 col-md-3 stat-item">
+                        <h3>2D & 3D</h3>
+                        <p><span class="bn-text">আধুনিক আর্কিটেকচারাল নকশা</span><span class="en-text">Architectural Visualization</span></p>
+                    </div>
+                    <div class="col-6 col-md-3 stat-item">
+                        <h3>24/7</h3>
+                        <p><span class="bn-text">ইঞ্জিনিয়ারিং সুপারভিশন</span><span class="en-text">Engineering Supervision</span></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ================= ABOUT US ================= -->
+    <!-- ================= ABOUT US & SISTER CONCERNS ================= -->
     <section id="about" class="section-padding">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title">About Us</h2>
-                <p class="text-muted mt-3">Discover who we are and what drives us</p>
+                <span class="sub-heading">
+                    <span class="bn-text">আমাদের পরিচিতি</span>
+                    <span class="en-text">Who We Are</span>
+                </span>
+                <h2 class="section-title">
+                    <span class="bn-text">তন্ময় বিল্ডার্স সম্পর্কে</span>
+                    <span class="en-text">About Tonmoy Builders</span>
+                </h2>
+                <p class="text-muted mt-2 mx-auto" style="max-width: 680px;">
+                    <span class="bn-text">আমরা কেবল ইট-পাথরের ভবন তৈরি করি না, আপনার আজীবনের সঞ্চয়কে দিই নিরাপদ ও নান্দনিক স্থাপত্যের রূপ।</span>
+                    <span class="en-text">Discover who we are, our engineering philosophy, and the sister concerns driving our excellence.</span>
+                </p>
             </div>
-            <div class="row g-4">
-                <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
-                    <div class="info-card">
-                        <div class="icon-box"><i class="fa-solid fa-building"></i></div>
-                        <h3 class="fw-bold mb-3">1. Corporate Info</h3>
-                        <p class="text-muted">Tonmoy Builders is a premier real estate and building development company. We specialize in developing high-quality commercial and residential properties. Our commitment to architectural excellence and structural integrity ensures that every project we undertake stands the test of time.</p>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
-                    <div class="info-card">
-                        <div class="icon-box"><i class="fa-solid fa-users"></i></div>
-                        <h3 class="fw-bold mb-3">2. Our Team</h3>
-                        <p class="text-muted">Our team consists of highly skilled engineers, visionary architects, and dedicated project managers. We work collaboratively to bring dream spaces into reality, ensuring top-tier safety standards and timely delivery for our clients.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ================= PROJECTS ================= -->
-    <section id="projects" class="section-padding" style="background-color: #e2e8f0;">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="text-muted mt-3">Explore our most recent architectural achievements</p>
-            </div>
             <div class="row g-4">
-                <!-- Project 1 -->
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-card h-100">
-                        <div class="project-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1541881430871-331034f7833a?q=80&w=800" alt="Commercial Plaza">
-                        </div>
-                        <div class="project-info">
-                            <h5 class="fw-bold mb-2">Commercial Plaza</h5>
-                            <p class="text-muted mb-0">Modern commercial spaces designed for business growth and retail excellence.</p>
-                        </div>
+                    <div class="info-card">
+                        <div class="icon-box"><i class="fa-solid fa-building-shield"></i></div>
+                        <h4 class="fw-bold mb-3">
+                            <span class="bn-text">১. কর্পোরেট প্রোফাইল</span>
+                            <span class="en-text">1. Corporate Profile</span>
+                        </h4>
+                        <p class="text-muted mb-0">
+                            <span class="bn-text"><strong>মেসার্স তন্ময় বিল্ডার্স (M/S. Tonmoy Builders)</strong> গাজীপুর ও ঢাকার অন্যতম শীর্ষস্থানীয় রিয়েল এস্টেট, বিল্ডিং ডিজাইন ও ডেভেলপমেন্ট প্রতিষ্ঠান। আমরা উচ্চমানের বাণিজ্যিক প্লাজা, আবাসিক অ্যাপার্টমেন্ট, ডুপ্লেক্স ও রিসোর্ট ডিজাইন এবং নির্মাণে বিশেষজ্ঞ।</span>
+                            <span class="en-text">Tonmoy Builders is a premier real estate, architectural design, and building development company specializing in high-quality commercial and residential properties that stand the test of time.</span>
+                        </p>
                     </div>
                 </div>
-                <!-- Project 2 -->
+
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-card h-100">
-                        <div class="project-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800" alt="Luxury Residency">
-                        </div>
-                        <div class="project-info">
-                            <h5 class="fw-bold mb-2">Luxury Residency</h5>
-                            <p class="text-muted mb-0">Premium apartments with world-class amenities and breathtaking city views.</p>
-                        </div>
+                    <div class="info-card">
+                        <div class="icon-box"><i class="fa-solid fa-helmet-safety"></i></div>
+                        <h4 class="fw-bold mb-3">
+                            <span class="bn-text">২. দক্ষ ইঞ্জিনিয়ার ও আর্কিটেক্ট টিম</span>
+                            <span class="en-text">2. Expert Engineering Team</span>
+                        </h4>
+                        <p class="text-muted mb-0">
+                            <span class="bn-text">আমাদের টিমে রয়েছেন অভিজ্ঞ স্ট্রাকচারাল ইঞ্জিনিয়ার, সৃজনশীল আর্কিটেক্ট, ক্যাড (CAD) স্পেশালিস্ট এবং দক্ষ প্রজেক্ট ম্যানেজার। প্রতিটি ভবনের ফাউন্ডেশন, কলাম ও বিমের নিখুঁত ক্যালকুলেশন নিশ্চিত করে আমরা কাজ করি।</span>
+                            <span class="en-text">Our team consists of skilled structural engineers, visionary architects, CAD designers, and project managers working collaboratively to ensure top-tier safety standards and timely delivery.</span>
+                        </p>
                     </div>
                 </div>
-                <!-- Project 3 -->
+
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-card h-100">
-                        <div class="project-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800" alt="Modern Duplex">
+                    <div class="info-card">
+                        <div class="icon-box"><i class="fa-solid fa-handshake-angle"></i></div>
+                        <h4 class="fw-bold mb-3">
+                            <span class="bn-text">৩. আমাদের প্রতিশ্রুতি</span>
+                            <span class="en-text">3. Our Core Commitment</span>
+                        </h4>
+                        <p class="text-muted mb-0">
+                            <span class="bn-text">নকশার জটিলতা কিংবা রাজউক/সিটি কর্পোরেশন প্ল্যান পাস করানোর ঝামেলা থেকে ক্লায়েন্টকে সম্পূর্ণ মুক্ত রেখে নির্ধারিত সময়ের মধ্যে ১০০% গুণগত মান বজায় রেখে প্রজেক্ট হস্তান্তর করাই আমাদের মূল লক্ষ্য।</span>
+                            <span class="en-text">From resolving complex architectural layouts and RAJUK approvals to delivering earthquake-resistant foundations, client peace of mind and transparency are at the heart of our work.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sister Concerns Banner (Verified from Facebook Page) -->
+            <div class="partner-strip shadow-lg" data-aos="zoom-in">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-5">
+                        <span class="text-warning fw-bold text-uppercase small">Building Better Futures Together</span>
+                        <h4 class="fw-bold mt-1 mb-2">
+                            <span class="bn-text">আমাদের সহযোগী প্রতিষ্ঠানসমূহ</span>
+                            <span class="en-text">Our Sister Concerns & Partners</span>
+                        </h4>
+                        <p class="text-white-50 mb-0 small">
+                            <span class="bn-text">কনসালটেন্সি, হাউজিং এবং ডেভেলপমেন্টের সমন্বিত সেবা এক ছাদের নিচে।</span>
+                            <span class="en-text">Integrated engineering consultancy, housing, and real estate development under one roof.</span>
+                        </p>
+                    </div>
+                    <div class="col-lg-7 d-flex flex-wrap gap-3 justify-content-lg-end">
+                        <div class="partner-badge">
+                            <i class="fa-solid fa-city text-warning"></i> M/S. Tonmoy Builders
                         </div>
-                        <div class="project-info">
-                            <h5 class="fw-bold mb-2">Modern Duplex</h5>
-                            <p class="text-muted mb-0">Architecturally stunning family homes located in prime residential areas.</p>
+                        <div class="partner-badge">
+                            <i class="fa-solid fa-drafting-compass text-warning"></i> Udayan Consultants
+                        </div>
+                        <div class="partner-badge">
+                            <i class="fa-solid fa-house-chimney-window text-warning"></i> Bhabna Housing & Developers Ltd.
                         </div>
                     </div>
                 </div>
@@ -307,49 +727,444 @@
         </div>
     </section>
 
-    <!-- ================= MEDIA CENTER ================= -->
-    <section id="media" class="section-padding">
-        <div class="container text-center" data-aos="zoom-in">
-            <h2 class="section-title">Media Center</h2>
-            <p class="text-muted mt-3 mb-5">Latest updates, construction progress, and news</p>
-            
-            <div class="media-widget shadow-sm">
-                <i class="fa-brands fa-facebook text-primary mb-3" style="font-size: 3rem;"></i>
-                <h4 class="fw-bold">Stay Connected</h4>
-                <p class="text-muted mb-4">Follow our official Facebook page to see live updates of our ongoing projects.</p>
-                <a href="https://www.facebook.com/tonmoybuilders.ms" target="_blank" class="btn-custom text-decoration-none">
-                    <i class="fa-brands fa-facebook-f me-2"></i> Visit Our Facebook Page
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= CONTACT ================= -->
-    <section id="contact" class="section-padding" style="background-color: #fff;">
+    <!-- ================= SERVICES SECTION (FROM FB PAGE) ================= -->
+    <section id="services" class="section-padding" style="background-color: #eef2f6;">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title">Get In Touch</h2>
+                <span class="sub-heading">
+                    <span class="bn-text">আমরা কী কী সেবা দিই</span>
+                    <span class="en-text">What We Offer</span>
+                </span>
+                <h2 class="section-title">
+                    <span class="bn-text">আমাদের প্রফেশনাল সেবাসমূহ</span>
+                    <span class="en-text">Our Specialized Services</span>
+                </h2>
+                <p class="text-muted mt-2">
+                    <span class="bn-text">বাড়ির প্ল্যান পাস থেকে শুরু করে চাবি হস্তান্তর পর্যন্ত সম্পূর্ণ ইঞ্জিনিয়ারিং ও কনস্ট্রাকশন সলিউশন</span>
+                    <span class="en-text">End-to-end architectural design, approval, and construction services tailored to your land</span>
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="info-card">
+                        <div class="icon-box"><i class="fa-solid fa-file-signature"></i></div>
+                        <h5 class="fw-bold mb-2">
+                            <span class="bn-text">রাজউক ও সিটি কর্পোরেশন প্ল্যান পাস</span>
+                            <span class="en-text">RAJUK & GCC Plan Approval</span>
+                        </h5>
+                        <p class="text-muted mb-0">
+                            <span class="bn-text">রাজউক (RAJUK), গাজীপুর সিটি কর্পোরেশন (GCC) ও পৌরসভার নীতিমালা অনুযায়ী নির্ভুল শিট তৈরি এবং দ্রুততম সময়ে প্ল্যান পাস করানোর সম্পূর্ণ সহযোগিতা।</span>
+                            <span class="en-text">Complete assistance with RAJUK, Gazipur City Corporation (GCC), and Municipal building plan preparation and hassle-free official approvals.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="info-card">
+                        <div class="icon-box"><i class="fa-solid fa-cubes"></i></div>
+                        <h5 class="fw-bold mb-2">
+                            <span class="bn-text">আর্কিটেকচারাল 2D/3D ও স্ট্রাকচারাল ডিজাইন</span>
+                            <span class="en-text">2D/3D Architectural & Structural Design</span>
+                        </h5>
+                        <p class="text-muted mb-0">
+                            <span class="bn-text">জমির সর্বোচ্চ ব্যবহার নিশ্চিত করে আধুনিক ফ্লোর প্ল্যান, দৃষ্টিনন্দন 3D ভিউ, অ্যানিমেশন, স্ট্রাকচারাল, ইলেকট্রিক্যাল ও প্লাম্বিং (MEP) ওয়ার্কিং ড্রয়িং।</span>
+                            <span class="en-text">Optimal floor layouts, realistic 3D exterior views, earthquake-resistant structural drawings, and complete electrical & plumbing (MEP) blueprints.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="info-card">
+                        <div class="icon-box"><i class="fa-solid fa-umbrella-beach"></i></div>
+                        <h5 class="fw-bold mb-2">
+                            <span class="bn-text">রিসোর্ট, রেস্ট হাউস ও ডুপ্লেক্স ডিজাইন</span>
+                            <span class="en-text">Resort, Rest House & Duplex Design</span>
+                        </h5>
+                        <p class="text-muted mb-0">
+                            <span class="bn-text">গাজীপুর, মাওনা ও প্রাকৃতিক পরিবেশে আধুনিক রিসোর্ট, বাগানবাড়ি, রেস্ট হাউস এবং লাক্সারি ডুপ্লেক্স ও ট্রিপ্লেক্স বাড়ির নান্দনিক নকশা ও নির্মাণ।</span>
+                            <span class="en-text">Bespoke master planning and architectural design for eco-resorts, rest houses, vacation villas, and luxury duplex residences across Gazipur & Mawna.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
+                    <div class="info-card">
+                        <div class="icon-box"><i class="fa-solid fa-trowel-bricks"></i></div>
+                        <h5 class="fw-bold mb-2">
+                            <span class="bn-text">বাণিজ্যিক ও আবাসিক ভবন নির্মাণ</span>
+                            <span class="en-text">Commercial & Residential Construction</span>
+                        </h5>
+                        <p class="text-muted mb-0">
+                            <span class="bn-text">দক্ষ প্রকৌশলীদের সার্বক্ষণিক তত্ত্বাবধানে বহুতল আবাসিক অ্যাপার্টমেন্ট, কমার্শিয়াল মার্কেট, ফ্যাক্টরি ও মসজিদ নির্মাণের নির্ভরযোগ্য কন্ট্রাক্টিং সেবা।</span>
+                            <span class="en-text">Full turnkey building construction and real estate development with strict quality control of materials and constant engineer supervision.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="info-card">
+                        <div class="icon-box"><i class="fa-solid fa-microscope"></i></div>
+                        <h5 class="fw-bold mb-2">
+                            <span class="bn-text">সয়েল টেস্ট, ডিজিটাল সার্ভে ও এস্টিমেট</span>
+                            <span class="en-text">Soil Test, Digital Survey & Estimation</span>
+                        </h5>
+                        <p class="text-muted mb-0">
+                            <span class="bn-text">ভবনের ফাউন্ডেশন নির্ধারণের জন্য নির্ভুল মাটি পরীক্ষা (Soil Test), টোটাল স্টেশন দিয়ে ডিজিটাল ল্যান্ড সার্ভে এবং নির্মাণ খরচের বিস্তারিত বাজেট হিসাব (BOQ)।</span>
+                            <span class="en-text">Geotechnical soil investigation, digital land survey using Total Station, and accurate Bill of Quantities (BOQ) cost estimation before construction.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="350">
+                    <div class="info-card">
+                        <div class="icon-box"><i class="fa-solid fa-couch"></i></div>
+                        <h5 class="fw-bold mb-2">
+                            <span class="bn-text">ইন্টেরিয়র ডিজাইন ও রেনোভেশন</span>
+                            <span class="en-text">Interior Design & Renovation</span>
+                        </h5>
+                        <p class="text-muted mb-0">
+                            <span class="bn-text">ফ্ল্যাট, ডুপ্লেক্স, শোরুম বা কর্পোরেট অফিসের আধুনিক ইন্টেরিয়র ডেকোরেশন এবং পুরনো ভবনের রেট্রোফিটিং ও আধুনিকায়ন।</span>
+                            <span class="en-text">Modern luxury interior design for homes, offices, and commercial spaces alongside structural retrofitting and building renovation.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FEATURED PROJECTS (FB + WEBSITE VERIFIED) ================= -->
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <div class="text-center mb-4" data-aos="fade-up">
+                <span class="sub-heading">
+                    <span class="bn-text">আমাদের কাজের নমুনা</span>
+                    <span class="en-text">Our Portfolio</span>
+                </span>
+                <h2 class="section-title">
+                    <span class="bn-text">উল্লেখযোগ্য প্রজেক্টসমূহ</span>
+                    <span class="en-text">Featured & Recent Projects</span>
+                </h2>
+                <p class="text-muted mt-2">
+                    <span class="bn-text">আমাদের ফেসবুক পেজ ও ওয়েবসাইটের সাম্প্রতিক ক্লায়েন্ট প্রজেক্ট ও আর্কিটেকচারাল অর্জনসমূহ</span>
+                    <span class="en-text">Explore our recent client projects and architectural achievements from our portfolio</span>
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="text-center mb-5" data-aos="fade-up">
+                <button class="filter-btn active" onclick="filterProjects('all', this)">
+                    <span class="bn-text">সব প্রজেক্ট</span><span class="en-text">All Projects</span>
+                </button>
+                <button class="filter-btn" onclick="filterProjects('residential', this)">
+                    <span class="bn-text">আবাসিক ভবন</span><span class="en-text">Residential</span>
+                </button>
+                <button class="filter-btn" onclick="filterProjects('resort', this)">
+                    <span class="bn-text">রিসোর্ট ও ডুপ্লেক্স</span><span class="en-text">Resort & Duplex</span>
+                </button>
+                <button class="filter-btn" onclick="filterProjects('commercial', this)">
+                    <span class="bn-text">কমার্শিয়াল</span><span class="en-text">Commercial</span>
+                </button>
+            </div>
+
+            <div class="row g-4" id="projectGrid">
+                <!-- Project 1: 6-Storied Building (From FB Page: Client Nurul Amin) -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="residential" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card">
+                        <div class="project-img-wrapper">
+                            <span class="project-tag">6-Storied Residential</span>
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=900" alt="6 Storied Residential Building">
+                        </div>
+                        <div class="project-info">
+                            <h5 class="fw-bold mb-2">
+                                <span class="bn-text">৬ তলা আবাসিক ভবন প্রজেক্ট</span>
+                                <span class="en-text">6-Storied Residential Building</span>
+                            </h5>
+                            <p class="text-muted mb-0 small">
+                                <span class="bn-text">সম্মানিত ক্লায়েন্ট <strong>নুরুল আমিন গং</strong>-এর ৬ তলা আবাসিক ভবনের সম্পূর্ণ আর্কিটেকচারাল, স্ট্রাকচারাল ড্রয়িং ও অনুমোদন প্রজেক্ট।</span>
+                                <span class="en-text">Complete architectural design, structural engineering drawings, and approval package for respected client Nurul Amin & Co.</span>
+                            </p>
+                            <div class="project-meta">
+                                <span><i class="fa-solid fa-user-tie"></i> Client: Nurul Amin & Co.</span>
+                                <span><i class="fa-solid fa-layer-group"></i> G+5 Storied</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Resort & Rest House (From FB Page: Gazipur / Mawna) -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="resort" data-aos="fade-up" data-aos-delay="150">
+                    <div class="project-card">
+                        <div class="project-img-wrapper">
+                            <span class="project-tag">Resort & Rest House</span>
+                            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=900" alt="Mawna Gazipur Resort Design">
+                        </div>
+                        <div class="project-info">
+                            <h5 class="fw-bold mb-2">
+                                <span class="bn-text">লাক্সারি রিসোর্ট ও রেস্ট হাউস ডিজাইন</span>
+                                <span class="en-text">Luxury Resort & Rest House</span>
+                            </h5>
+                            <p class="text-muted mb-0 small">
+                                <span class="bn-text">গাজীপুর ও মাওনা অঞ্চলে প্রাকৃতিক পরিবেশের সাথে সামঞ্জস্য রেখে আধুনিক রিসোর্ট, সুইমিং পুল ও অবকাশ যাপন কেন্দ্রের মাস্টারপ্ল্যান।</span>
+                                <span class="en-text">Modern eco-resort and luxury rest house architectural masterplan designed for serene green landscapes in Mawna, Gazipur.</span>
+                            </p>
+                            <div class="project-meta">
+                                <span><i class="fa-solid fa-location-dot"></i> Mawna, Gazipur</span>
+                                <span><i class="fa-solid fa-tree"></i> Eco-Resort Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Commercial Plaza (From Website) -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="commercial" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <div class="project-img-wrapper">
+                            <span class="project-tag">Commercial Development</span>
+                            <img src="https://images.unsplash.com/photo-1541881430871-331034f7833a?q=80&w=900" alt="Commercial Plaza">
+                        </div>
+                        <div class="project-info">
+                            <h5 class="fw-bold mb-2">
+                                <span class="bn-text">মডার্ন কমার্শিয়াল প্লাজা</span>
+                                <span class="en-text">Modern Commercial Plaza</span>
+                            </h5>
+                            <p class="text-muted mb-0 small">
+                                <span class="bn-text">ব্যবসায়িক প্রসার ও শপিং মলের জন্য আধুনিক গ্লাস ফ্যাসাদ, প্রশস্ত পার্কিং ও সর্বোচ্চ নিরাপত্তা সম্বলিত বাণিজ্যিক ভবন।</span>
+                                <span class="en-text">Modern commercial spaces with glass facades and spacious layouts designed for business growth and retail excellence.</span>
+                            </p>
+                            <div class="project-meta">
+                                <span><i class="fa-solid fa-location-dot"></i> Gazipur City</span>
+                                <span><i class="fa-solid fa-building"></i> Commercial Hub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Proposed Residential Building (From FB Page: Client Md. Nazrul Islam) -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="residential" data-aos="fade-up" data-aos-delay="250">
+                    <div class="project-card">
+                        <div class="project-img-wrapper">
+                            <span class="project-tag">Residential Villa</span>
+                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=900" alt="Proposed Residential Building">
+                        </div>
+                        <div class="project-info">
+                            <h5 class="fw-bold mb-2">
+                                <span class="bn-text">আধুনিক ১ তলা আবাসিক ভবন</span>
+                                <span class="en-text">Proposed 1-Storied Residence</span>
+                            </h5>
+                            <p class="text-muted mb-0 small">
+                                <span class="bn-text">ক্লায়েন্ট <strong>মোঃ নজরুল ইসলাম</strong>-এর জন্য গাতিপাড়া, আটপাড়া, নেত্রকোনায় নির্মিতব্য আধুনিক সুযোগ-সুবিধা সম্পন্ন আবাসিক বাড়ির নকশা।</span>
+                                <span class="en-text">Custom residential building design with modern front elevation for client Md. Nazrul Islam at Gatipara, Atpara, Netrokona.</span>
+                            </p>
+                            <div class="project-meta">
+                                <span><i class="fa-solid fa-user-tie"></i> Client: Md. Nazrul Islam</span>
+                                <span><i class="fa-solid fa-location-dot"></i> Atpara, Netrokona</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Modern G+1 Duplex (From FB Page: Client Md. Nuru) -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="resort" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card">
+                        <div class="project-img-wrapper">
+                            <span class="project-tag">G+1 Duplex</span>
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=900" alt="Modern Duplex Villa">
+                        </div>
+                        <div class="project-info">
+                            <h5 class="fw-bold mb-2">
+                                <span class="bn-text">প্রস্তাবিত G+1 ডুপ্লেক্স ও আবাসিক ভবন</span>
+                                <span class="en-text">Modern G+1 Duplex Residence</span>
+                            </h5>
+                            <p class="text-muted mb-0 small">
+                                <span class="bn-text">সম্মানিত ক্লায়েন্ট <strong>মোঃ নুরু</strong>-এর জন্য প্রস্তাবিত G+1 আধুনিক ডুপ্লেক্স ও পারিবারিক আবাসিক ভবনের ৩ডি ও ওয়ার্কিং ড্রয়িং।</span>
+                                <span class="en-text">Architecturally stunning G+1 family residence designed for client Md. Nuru featuring spacious balconies and modern aesthetics.</span>
+                            </p>
+                            <div class="project-meta">
+                                <span><i class="fa-solid fa-user-tie"></i> Client: Md. Nuru</span>
+                                <span><i class="fa-solid fa-house-chimney"></i> G+1 Building</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Luxury Apartment Residency -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="residential" data-aos="fade-up" data-aos-delay="350">
+                    <div class="project-card">
+                        <div class="project-img-wrapper">
+                            <span class="project-tag">Luxury Residency</span>
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=900" alt="Luxury Residency">
+                        </div>
+                        <div class="project-info">
+                            <h5 class="fw-bold mb-2">
+                                <span class="bn-text">লাক্সারি অ্যাপার্টমেন্ট রেসিডেন্সি</span>
+                                <span class="en-text">Luxury Apartment Residency</span>
+                            </h5>
+                            <p class="text-muted mb-0 small">
+                                <span class="bn-text">আধুনিক নাগরিক সুবিধা, লিফট, জেনারেটর ও রুফটপ গার্ডেন সহ বহুতল লাক্সারি রেসিডেনশিয়াল অ্যাপার্টমেন্ট প্রজেক্ট।</span>
+                                <span class="en-text">Premium multi-storied residential apartments with world-class amenities, rooftop greenery, and modern structural engineering.</span>
+                            </p>
+                            <div class="project-meta">
+                                <span><i class="fa-solid fa-location-dot"></i> Board Bazar, Gazipur</span>
+                                <span><i class="fa-solid fa-building-user"></i> Multi-Storied</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= MEDIA CENTER & LIVE FACEBOOK FEED ================= -->
+    <section id="media" class="section-padding" style="background-color: #f1f5f9;">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="sub-heading">
+                    <span class="bn-text">সোশ্যাল মিডিয়া ও আপডেট</span>
+                    <span class="en-text">Social & Community Updates</span>
+                </span>
+                <h2 class="section-title">
+                    <span class="bn-text">মিডিয়া সেন্টার ও ফেসবুক লাইভ ফিড</span>
+                    <span class="en-text">Media Center & Facebook Showcase</span>
+                </h2>
+                <p class="text-muted mt-2">
+                    <span class="bn-text">আমাদের চলমান প্রজেক্টের ছবি, সাইট ভিজিট এবং নতুন ডিজাইনের নিয়মিত আপডেট দেখুন আমাদের অফিশিয়াল ফেসবুক পেজে</span>
+                    <span class="en-text">Watch live construction updates, new 3D renders, and community events directly from our official Facebook page</span>
+                </p>
+            </div>
+
+            <div class="row g-4 align-items-stretch">
+                <!-- Left Column: Highlights & Community -->
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="fb-showcase-card d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <img src="https://i.postimg.cc/13nhZhkc/8h-Ojj.jpg" alt="Tonmoy Builders" style="width: 60px; height: 60px; border-radius: 14px; object-fit: cover;">
+                                <div>
+                                    <h4 class="fw-bold mb-0">M/S. Tonmoy Builder's</h4>
+                                    <span class="text-primary small fw-semibold"><i class="fa-brands fa-facebook me-1"></i> @tonmoybuilders.ms</span>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-4">
+                                <span class="bn-text">আমাদের অফিশিয়াল ফেসবুক পেজে প্রতিটি নতুন ভবনের 3D নকশা, রাজউক ও সিটি কর্পোরেশন প্ল্যান পাস আপডেট এবং নির্মাণ সাইটের সরাসরি ছবি ও ভিডিও নিয়মিত শেয়ার করা হয়।</span>
+                                <span class="en-text">Follow our official Facebook page to view our latest 3D building designs, structural handovers, RAJUK approval updates, and community sponsorships.</span>
+                            </p>
+
+                            <!-- Community & Recent Post Highlights from FB -->
+                            <div class="p-3 rounded-4 bg-light border mb-3">
+                                <h6 class="fw-bold mb-1"><i class="fa-solid fa-check-circle text-success me-2"></i> 
+                                    <span class="bn-text">স্বপ্নের নকশায়, বিশ্বস্ততার সাথে</span>
+                                    <span class="en-text">Trusted Architectural Handovers</span>
+                                </h6>
+                                <p class="text-muted small mb-0">
+                                    <span class="bn-text">গাজীপুর, মাওনা, বোর্ডবাজার ও সারাদেশে আমাদের সম্মানিত ক্লায়েন্টদের বহুতল ভবনের সম্পূর্ণ ড্রয়িং ও অনুমোদন সফলভাবে সম্পন্ন হচ্ছে।</span>
+                                    <span class="en-text">Delivering complete architectural & structural drawing packages for multi-storied residential and commercial clients.</span>
+                                </p>
+                            </div>
+
+                            <div class="p-3 rounded-4 bg-light border mb-4">
+                                <h6 class="fw-bold mb-1"><i class="fa-solid fa-trophy text-warning me-2"></i> 
+                                    <span class="bn-text">ক্যাম্পাস ও সামাজিক ইভেন্ট পার্টনার</span>
+                                    <span class="en-text">Youth & Campus Spirit Partner</span>
+                                </h6>
+                                <p class="text-muted small mb-0">
+                                    <span class="bn-text">তরুণ প্রজন্মের খেলাধুলা ও বিশ্ববিদ্যালয়ের বিভিন্ন উৎসব ও টুর্নামেন্টে (যেমন IUBAT Campus Football) গর্বিত পার্টনার হিসেবে তন্ময় বিল্ডার্স সবসময় পাশে থাকে।</span>
+                                    <span class="en-text">Proud partner in campus sports celebrations and community development initiatives.</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="https://www.facebook.com/tonmoybuilders.ms" target="_blank" class="btn-custom text-decoration-none">
+                                <i class="fa-brands fa-facebook-f"></i>
+                                <span class="bn-text">ফেসবুক পেজ ভিজিট করুন</span>
+                                <span class="en-text">Visit Facebook Page</span>
+                            </a>
+                            <a href="https://wa.me/8801610578868" target="_blank" class="btn btn-outline-dark rounded-pill px-4 fw-semibold d-inline-flex align-items-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-success fs-5"></i> WhatsApp Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Live Embedded Facebook Page Timeline -->
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="fb-showcase-card text-center">
+                        <h5 class="fw-bold mb-3">
+                            <i class="fa-brands fa-facebook text-primary me-2"></i>
+                            <span class="bn-text">আমাদের ফেসবুক পেজের লাইভ পোস্ট ও ছবি</span>
+                            <span class="en-text">Live Posts & Photos from Facebook</span>
+                        </h5>
+                        <div class="fb-iframe-container">
+                            <iframe 
+                                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftonmoybuilders.ms&tabs=timeline%2Cphotos&width=500&height=460&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true" 
+                                width="500" 
+                                height="460" 
+                                style="border:none;overflow:hidden;max-width:100%;border-radius:12px;" 
+                                scrolling="no" 
+                                frameborder="0" 
+                                allowfullscreen="true" 
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT & WHATSAPP ENQUIRY ================= -->
+    <section id="contact" class="section-padding bg-white">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="sub-heading">
+                    <span class="bn-text">সরাসরি কথা বলুন</span>
+                    <span class="en-text">Get In Touch</span>
+                </span>
+                <h2 class="section-title">
+                    <span class="bn-text">যোগাযোগ ও প্রজেক্ট কনসালটেশন</span>
+                    <span class="en-text">Contact Our Corporate Office</span>
+                </h2>
+                <p class="text-muted mt-2">
+                    <span class="bn-text">আপনার জমির মাপ বা স্বপ্নের বাড়ির পরিকল্পনা নিয়ে আজই আমাদের অফিসে আসুন অথবা কল করুন</span>
+                    <span class="en-text">Visit our office at Board Bazar, Gazipur or send us your building requirements directly</span>
+                </p>
             </div>
             
             <div class="row g-5">
-                <!-- Contact Info -->
+                <!-- Contact Info & Map -->
                 <div class="col-lg-5" data-aos="fade-right">
                     <div class="info-card bg-light border-0">
-                        <h3 class="fw-bold mb-4">Corporate Office</h3>
+                        <h3 class="fw-bold mb-4">
+                            <span class="bn-text">কর্পোরেট অফিস</span>
+                            <span class="en-text">Corporate Office</span>
+                        </h3>
                         
                         <div class="contact-item">
                             <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
                             <div>
-                                <h6 class="fw-bold mb-1">Address</h6>
-                                <p class="text-muted mb-0">JALAL SHOPPING COMPLEX,<br>BOARD BAZAR, GAZIPUR</p>
+                                <h6 class="fw-bold mb-1">
+                                    <span class="bn-text">অফিস ঠিকানা</span>
+                                    <span class="en-text">Office Address</span>
+                                </h6>
+                                <p class="text-muted mb-0">
+                                    <span class="bn-text">বোর্ডবাজার, জালাল শপিং কমপ্লেক্সের উত্তর পাশে (২য় তলা), গাজীপুর সিটি কর্পোরেশন - ১৭০৪</span>
+                                    <span class="en-text">Beside Jalal Shopping Complex (North Side, 2nd Floor), Board Bazar, Gazipur-1704</span>
+                                </p>
                             </div>
                         </div>
 
                         <div class="contact-item">
-                            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="contact-icon"><i class="fa-solid fa-phone-volume"></i></div>
                             <div>
-                                <h6 class="fw-bold mb-1">Phone / WhatsApp</h6>
-                                <a href="tel:01610578868" class="text-muted text-decoration-none">01610578868</a>
+                                <h6 class="fw-bold mb-1">Call / WhatsApp / Imo</h6>
+                                <a href="tel:01610578868" class="text-dark fw-bold fs-5 text-decoration-none d-block">01610-578868</a>
                             </div>
                         </div>
 
@@ -357,48 +1172,76 @@
                             <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                             <div>
                                 <h6 class="fw-bold mb-1">Email Address</h6>
-                                <a href="mailto:info@tonmoybuilders.com" class="text-muted text-decoration-none">info@tonmoybuilders.com</a>
+                                <a href="mailto:info@tonmoybuilders.com" class="text-muted text-decoration-none d-block">info@tonmoybuilders.com</a>
+                                <a href="mailto:tonmoybuilders@gmail.com" class="text-muted text-decoration-none d-block">tonmoybuilders@gmail.com</a>
                             </div>
                         </div>
 
-                        <div class="contact-item mb-0">
-                            <div class="contact-icon"><i class="fa-solid fa-globe"></i></div>
-                            <div>
-                                <h6 class="fw-bold mb-1">Website</h6>
-                                <a href="http://tonmoybuilders.com" class="text-muted text-decoration-none">tonmoybuilders.com</a>
-                            </div>
+                        <!-- Google Map Embed for Board Bazar, Gazipur -->
+                        <div class="mt-4 rounded-4 overflow-hidden border shadow-sm">
+                            <iframe 
+                                src="https://www.google.com/maps?q=Jalal+Shopping+Complex,+Board+Bazar,+Gazipur&output=embed" 
+                                width="100%" 
+                                height="220" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                            </iframe>
                         </div>
                     </div>
                 </div>
 
-                <!-- Floating Label Form -->
+                <!-- Direct WhatsApp & Email Enquiry Form -->
                 <div class="col-lg-7" data-aos="fade-left">
                     <div class="info-card">
-                        <h3 class="fw-bold mb-4">Customer Enquiry</h3>
-                        <form action="#" method="POST">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="nameInput" placeholder="John Doe">
-                                <label for="nameInput">Full Name</label>
-                            </div>
+                        <h3 class="fw-bold mb-2">
+                            <span class="bn-text">কাস্টমার ইনকোয়ারি ফর্ম</span>
+                            <span class="en-text">Customer Project Enquiry</span>
+                        </h3>
+                        <p class="text-muted mb-4 small">
+                            <span class="bn-text">নিচের ফর্মটি পূরণ করে বাটনে ক্লিক করলে আপনার বার্তাটি সরাসরি আমাদের অফিশিয়াল WhatsApp-এ চলে যাবে।</span>
+                            <span class="en-text">Fill out your project details below to send an instant enquiry directly to our engineering team via WhatsApp.</span>
+                        </p>
+
+                        <form id="enquiryForm" onsubmit="sendToWhatsApp(event)">
                             <div class="row g-3 mb-3">
                                 <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="tel" class="form-control" id="phoneInput" placeholder="01610578868">
-                                        <label for="phoneInput">Phone Number</label>
-                                    </div>
+                                    <label class="form-label fw-semibold small">Full Name / আপনার নাম *</label>
+                                    <input type="text" class="form-control" id="nameInput" placeholder="আপনার নাম লিখুন" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
-                                        <label for="emailInput">Email Address</label>
-                                    </div>
+                                    <label class="form-label fw-semibold small">Phone Number / মোবাইল নম্বর *</label>
+                                    <input type="tel" class="form-control" id="phoneInput" placeholder="01XXXXXXXXX" required>
                                 </div>
                             </div>
-                            <div class="form-floating mb-4">
-                                <textarea class="form-control" placeholder="Leave a message here" id="messageInput" style="height: 150px"></textarea>
-                                <label for="messageInput">Your Message / Requirements</label>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold small">Service Needed / কোন সেবা প্রয়োজন?</label>
+                                    <select class="form-select" id="serviceInput">
+                                        <option value="RAJUK / City Corp Plan Pass">রাজউক / সিটি কর্পোরেশন প্ল্যান পাস (Plan Approval)</option>
+                                        <option value="2D/3D Architectural & Structural Design">আর্কিটেকচারাল ও স্ট্রাকচারাল ডিজাইন (2D/3D Design)</option>
+                                        <option value="Building Construction">ভবন নির্মাণ (Building Construction)</option>
+                                        <option value="Resort / Duplex Design">রিসোর্ট / ডুপ্লেক্স ডিজাইন (Resort / Duplex)</option>
+                                        <option value="Soil Test / Digital Survey">সয়েল টেস্ট / ডিজিটাল সার্ভে (Soil Test & Survey)</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold small">Project Location / জমির অবস্থান</label>
+                                    <input type="text" class="form-control" id="locationInput" placeholder="যেমন: বোর্ডবাজার, গাজীপুর / মাওনা / ঢাকা">
+                                </div>
                             </div>
-                            <button type="submit" class="btn-custom w-100 fs-5"><i class="fa-solid fa-paper-plane me-2"></i> Send Enquiry</button>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold small">Project Details / আপনার প্রজেক্টের বিবরণ (জমির মাপ, কয় তলা ইত্যাদি)</label>
+                                <textarea class="form-control" id="messageInput" rows="4" placeholder="আপনার জমির পরিমাণ ও কত তলা ভবন করতে চান তা সংক্ষেপে লিখুন..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-custom w-100 justify-content-center fs-5">
+                                <i class="fa-brands fa-whatsapp fs-4"></i>
+                                <span class="bn-text">হোয়াটসঅ্যাপে ইনকোয়ারি পাঠান</span>
+                                <span class="en-text">Send Instant Enquiry via WhatsApp</span>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -409,22 +1252,124 @@
     <!-- ================= FOOTER ================= -->
     <footer>
         <div class="container">
-            <img src="https://i.postimg.cc/13nhZhkc/8h-Ojj.jpg" alt="Tonmoy Builders" style="height: 50px; border-radius: 8px;" class="mb-3">
-            <h5 class="fw-bold">Tonmoy Builders</h5>
-            <p class="text-white-50 mb-0">&copy; 2026 Tonmoy Builders. All Rights Reserved.</p>
+            <div class="row g-4 pb-4 border-bottom border-secondary">
+                <div class="col-lg-5">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://i.postimg.cc/13nhZhkc/8h-Ojj.jpg" alt="Tonmoy Builders" style="height: 55px; width: 55px; object-fit: cover; border-radius: 10px; border: 2px solid var(--accent);" class="me-3">
+                        <div>
+                            <h4 class="fw-bold text-white mb-0">M/S. Tonmoy Builders</h4>
+                            <small class="text-warning">Building The Future, Restoring The Past</small>
+                        </div>
+                    </div>
+                    <p class="text-white-50 small pe-lg-4">
+                        <span class="bn-text">রাজউক ও গাজীপুর সিটি কর্পোরেশন প্ল্যান পাস, আধুনিক আর্কিটেকচারাল 2D/3D ও স্ট্রাকচারাল ডিজাইন, রিসোর্ট এবং বহুতল বাণিজ্যিক ও আবাসিক ভবন নির্মাণে আপনার বিশ্বস্ত প্রতিষ্ঠান।</span>
+                        <span class="en-text">Premier architectural design, structural consultancy, RAJUK & GCC plan pass, and real estate development company in Gazipur, Bangladesh.</span>
+                    </p>
+                    <div class="mt-3">
+                        <a href="https://www.facebook.com/tonmoybuilders.ms" target="_blank" class="social-circle" title="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://wa.me/8801610578868" target="_blank" class="social-circle" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="mailto:info@tonmoybuilders.com" class="social-circle" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="tel:01610578868" class="social-circle" title="Call Now"><i class="fa-solid fa-phone"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <h6 class="text-white fw-bold mb-3 text-uppercase">Quick Links</h6>
+                    <ul class="footer-links small">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#projects">Featured Projects</a></li>
+                        <li><a href="#media">Media Center</a></li>
+                        <li><a href="#contact">Contact Office</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-4">
+                    <h6 class="text-white fw-bold mb-3 text-uppercase">Sister Concerns & Contact</h6>
+                    <ul class="footer-links small">
+                        <li class="text-warning fw-semibold"><i class="fa-solid fa-check me-2"></i>M/S. Tonmoy Builders</li>
+                        <li class="text-white-50"><i class="fa-solid fa-check me-2 text-warning"></i>Udayan Consultants</li>
+                        <li class="text-white-50 mb-3"><i class="fa-solid fa-check me-2 text-warning"></i>Bhabna Housing & Developers Ltd.</li>
+                        <li class="text-white"><i class="fa-solid fa-phone text-warning me-2"></i>01610-578868</li>
+                        <li class="text-white-50"><i class="fa-solid fa-location-dot text-warning me-2"></i>Board Bazar, Beside Jalal Shopping Complex (2nd Floor), Gazipur-1704</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center pt-4">
+                <p class="text-white-50 small mb-0">&copy; 2026 <strong>M/S. Tonmoy Builders</strong>. All Rights Reserved. | Official Website: <a href="https://www.tonmoybuilders.com" class="text-warning text-decoration-none">tonmoybuilders.com</a></p>
+            </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/8801610578868?text=Hello%20Tonmoy%20Builders,%20I%20would%20like%20to%20discuss%20a%20building%20project." target="_blank" class="floating-wa" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS Animation JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Initialize AOS -->
+
     <script>
+        // Initialize AOS Animation
         AOS.init({
-            once: true, // Animation happens only once
-            offset: 100, // Offset from original trigger point
+            once: true,
+            offset: 80,
+            duration: 700
         });
+
+        // Language Switcher (Bengali <-> English)
+        function toggleLanguage() {
+            const body = document.body;
+            const btn = document.getElementById('langBtn');
+            if (body.classList.contains('lang-bn')) {
+                body.classList.remove('lang-bn');
+                body.classList.add('lang-en');
+                btn.innerHTML = '<i class="fa-solid fa-language me-1"></i> বাংলা';
+            } else {
+                body.classList.remove('lang-en');
+                body.classList.add('lang-bn');
+                btn.innerHTML = '<i class="fa-solid fa-language me-1"></i> English';
+            }
+        }
+
+        // Project Portfolio Filter
+        function filterProjects(category, btnElement) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            const items = document.querySelectorAll('.project-item');
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Send Customer Enquiry Directly to WhatsApp (01610-578868)
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('nameInput').value.trim();
+            const phone = document.getElementById('phoneInput').value.trim();
+            const service = document.getElementById('serviceInput').value;
+            const location = document.getElementById('locationInput').value.trim() || 'Not specified';
+            const message = document.getElementById('messageInput').value.trim() || 'Please contact me.';
+
+            const text = `*New Website Enquiry - Tonmoy Builders*%0A%0A` +
+                         `*Name:* ${encodeURIComponent(name)}%0A` +
+                         `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                         `*Service:* ${encodeURIComponent(service)}%0A` +
+                         `*Location:* ${encodeURIComponent(location)}%0A` +
+                         `*Details:* ${encodeURIComponent(message)}`;
+
+            window.open(`https://wa.me/8801610578868?text=${text}`, '_blank');
+        }
     </script>
 </body>
 </html>
